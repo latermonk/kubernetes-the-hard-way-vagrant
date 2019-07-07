@@ -1,3 +1,4 @@
+# 00 generate
 
 ```
 ./scripts/generate-kubeconfig-kube-proxy

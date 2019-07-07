@@ -1,3 +1,4 @@
+## 00
 
 ```
 ./scripts/configure-kubectl-on-host

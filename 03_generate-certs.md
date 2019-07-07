@@ -1,5 +1,8 @@
 
 ```
+cd |  ./scripts
+
+
 ./generate-ca
 ./generate-admin-cert
 ./generate-worker-certs
