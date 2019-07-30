@@ -2,6 +2,37 @@
 
 
 ```
+./scripts/setup-etcd
+
+
+....
+
+
+
+
+vagrant ssh controller-0
+ETCDCTL_API=3 etcdctl member list
+
+```
+
+
+```
+cat  ./scripts/setup-etcd
+```
+
+```
+#!/bin/bash
+
+set -euo pipefail
+
+readonly dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# shellcheck source=versions.bash
+source "${dir}/versions.bash"
+
+pushd "${dir}/../"
+trap 'popd' EXIT
+
 for i in {0..2}; do
   cat <<EOF | vagrant ssh "controller-${i}" -- sudo bash
 
@@ -24,6 +55,7 @@ systemctl start etcd
 EOF
 done
 ```
+
 
 
 ##  check the etcd cluster

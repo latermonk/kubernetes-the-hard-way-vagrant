@@ -1,6 +1,6 @@
 ## 00
 ```
-./scripts/setup-kubelet-api-cluster-role
+cat  ./scripts/setup-kubelet-api-cluster-role
 ```
 
 ## 01

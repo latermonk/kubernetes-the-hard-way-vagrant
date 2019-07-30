@@ -1,6 +1,11 @@
+# check the scripts 
 
 ```
-cd |  ./scripts
+cat  ./scripts/generate-certs
+```
+
+```
+
 
 
 ./generate-ca
@@ -8,6 +13,8 @@ cd |  ./scripts
 ./generate-worker-certs
 ./generate-kube-proxy-cert
 ./generate-kubernetes-cert
+
+
 ```
 
 

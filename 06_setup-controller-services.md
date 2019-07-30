@@ -1,7 +1,7 @@
 ##  step 01:
 
 ```
-./scripts/setup-controller-services
+cat  ./scripts/setup-controller-services
 
 ```
 
