@@ -1,4 +1,4 @@
-# CLEAN
+# CLEAN【Delete files】
 ##  删除二进制文件
 ```
 
