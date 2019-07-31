@@ -4,10 +4,51 @@
 
 https://github.com/kinvolk/kubernetes-the-hard-way-vagrant     
 
+## Question
+
+### 实际操作中会产生那些中间文件？
+
+会产生如下文件：
+
+```
+tools/*
+
+
+certificates/*pem
+certificates/*csr
+
+
+config/*kubeconfig
+```
+如果重新运行就需要把这些中间文件都删除掉。
+
+
+### cfssl 和 cfssljson是什么?这两个工具怎么用？
+
+
+```
+cfssl 是CloudFlare的PKI工具集，可以用来生成Certificate Authority (CA) 和其它证书
+
+
+```
+
+```
+cfssljson
+
+从`cfssl`和`multirootca`程序获取JSON输出，并将证书，密钥，CSR和bundle写入磁盘
+
+```
+
+
+### 这个用的是k8s那个版本？
+
+```
+目前是 1.3.1
+```
 
 
 
-
+----------------------------------------------------------------------------------------
 
 ## Setup  Manually
 
