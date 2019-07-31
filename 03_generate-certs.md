@@ -118,6 +118,9 @@ cfssl certinfo -csr ca.csr
 
 
 
+参考文件：
+http://blog.itpub.net/28624388/viewspace-2152064/
+
 -----------
 
 
