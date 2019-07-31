@@ -3,6 +3,8 @@
 **froked from :**     
 
 https://github.com/kinvolk/kubernetes-the-hard-way-vagrant     
+https://github.com/caicloud/kube-ladder/blob/master/tutorials/lab3-manual-installtion.md   
+
 
 ## Question
 
@@ -46,9 +48,31 @@ cfssljson
 目前是 1.13
 ```
 
+### 新生成的文件名和文件的作用是什么？
+
+
+| 文件名 | 作用 | 注释 |
+|---|---|---|
+| ca-config.json | CA 配置文件 | 配置证书生成策略 |
+| ca-csr.json | CA 凭证签发请求文件 | CA证书签名请求 |
+| A3 | B3 | C3 |
+| A4 | B4 | C4 |
+| A5 | B5 | C5 |
+| A6 | B6 | C6 |
+| A7 | B7 | C7 |
+
+
 
 
 ----------------------------------------------------------------------------------------
+
+ |
+ |
+ |
+ |
+ |
+ |
+\|/
 
 ## Setup  Manually
 
