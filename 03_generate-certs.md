@@ -124,6 +124,8 @@ http://blog.itpub.net/28624388/viewspace-2152064/
 -----------
 
 
+**创建用于 Kubernetes 组件的 client 与 server 凭证，以及一个用于 Kubernetes admin 用户的 client 凭证。**
+
 ## generate-admin-cert
 
 
@@ -135,6 +137,40 @@ cfssl gencert \
   -profile=kubernetes \
   admin-csr.json | cfssljson -bare admin
 ```
+生成以下两个文件：
+
+```
+admin-key.pem
+admin.pem
+```
+其中：
+
+```
+admin-csr.json
+```
+是`admin` client 凭证签发请求文件
+
+```
+{
+  "CN": "admin",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "system:masters",
+      "OU": "Kubernetes The Hard Way",
+      "ST": "Oregon"
+    }
+  ]
+}
+
+```
+
+
 
 
 ## generate-worker-certs
