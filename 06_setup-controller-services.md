@@ -57,7 +57,14 @@ done
 
 ```
 
-for c in controller-0 controller-1 controller-2; do vagrant ssh $c -- kubectl get componentstatuses; done
+for c in controller-0 controller-1 controller-2; 
+
+do vagrant ssh $c -- 
+
+kubectl get componentstatuses; 
+
+
+done
 
 
 ```
