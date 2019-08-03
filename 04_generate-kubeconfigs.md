@@ -116,41 +116,28 @@ for instance in worker-0 worker-1 worker-2; do
 done
 ```
 
+**单个的生成config文件的代码：**
 
-
-
-
-## generate-kubeconfig-worker
-
+**work-0**
 
 ```
-
-  kubectl config set-cluster kubernetes-the-hard-way \
-    --certificate-authority="../certificates/ca.pem" \
+ kubectl config set-cluster kubernetes-the-hard-way \
+    --certificate-authority="./certificates_inuse/ca.pem" \
     --embed-certs=true \
     --server=https://192.168.199.40:6443 \
-    --kubeconfig="../config/${instance}.kubeconfig"
+    --kubeconfig="./config/worker-0.kubeconfig"
 
-  kubectl config set-credentials system:node:${instance} \
-    --client-certificate="../certificates/${instance}.pem" \
-    --client-key="../certificates/${instance}-key.pem" \
+  kubectl config set-credentials system:node:worker-0 \
+    --client-certificate="./certificates_inuse/worker-0.pem" \
+    --client-key="./certificates_inuse/worker-0-key.pem" \
     --embed-certs=true \
-    --kubeconfig="../config/${instance}.kubeconfig"
+    --kubeconfig="./config/worker-0.kubeconfig"
 
   kubectl config set-context default \
     --cluster=kubernetes-the-hard-way \
-    --user=system:node:${instance} \
-    --kubeconfig="../config/${instance}.kubeconfig"
+    --user=system:node:worker-0 \
+    --kubeconfig="./config/worker-0.kubeconfig"
 
-
-
+  kubectl config use-context default --kubeconfig="./config/worker-0.kubeconfig"
 ```
-
-
-```
-  kubectl config use-context default --kubeconfig="../config/${instance}.kubeconfig"
- 
-
-```
-
 
