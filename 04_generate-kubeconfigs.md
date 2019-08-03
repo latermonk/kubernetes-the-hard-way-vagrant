@@ -166,3 +166,24 @@ done
 **work-2**
 
 
+```
+ kubectl config set-cluster kubernetes-the-hard-way \
+    --certificate-authority="./certificates_inuse/ca.pem" \
+    --embed-certs=true \
+    --server=https://192.168.199.40:6443 \
+    --kubeconfig="./config/worker-2.kubeconfig"
+
+  kubectl config set-credentials system:node:worker-2 \
+    --client-certificate="./certificates_inuse/worker-2.pem" \
+    --client-key="./certificates_inuse/worker-2-key.pem" \
+    --embed-certs=true \
+    --kubeconfig="./config/worker-2.kubeconfig"
+
+  kubectl config set-context default \
+    --cluster=kubernetes-the-hard-way \
+    --user=system:node:worker-2 \
+    --kubeconfig="./config/worker-2.kubeconfig"
+
+  kubectl config use-context default --kubeconfig="./config/worker-2.kubeconfig"
+```
+
