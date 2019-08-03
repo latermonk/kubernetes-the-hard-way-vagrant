@@ -70,3 +70,36 @@ e206d150eae73959, started, controller-2, https://192.168.199.12:2380, https://19
 e7e775a3da74a469, started, controller-1, https://192.168.199.11:2380, https://192.168.199.11:2379
 ```
 
+
+**分解动作**
+
+**以controller-1为例**
+
+```
+ vagrant ssh controller-1
+ 
+ sudo bash
+
+
+cp /vagrant/tools/etcd-v3.3.9-linux-amd64/etcd*   /usr/local/bin/
+
+
+
+mkdir -p /etc/etcd /var/lib/etcd
+
+cp \
+  /vagrant/certificates_inuse/ca.pem \
+  /vagrant/certificates_inuse/kubernetes-key.pem \
+  /vagrant/certificates_inuse/kubernetes.pem \
+  /etc/etcd/
+
+
+
+cp /vagrant/config/aaa/controller-1-etcd.service /etc/systemd/system/etcd.service
+
+
+systemctl daemon-reload
+systemctl enable etcd
+systemctl start etcd
+```
+
