@@ -4,11 +4,9 @@ cat  ./scripts/setup-kubelet-api-cluster-role
 ```
 
 ## 01
+
+
 ```
-
-
-cat <<'EOF' | vagrant ssh "controller-0" -- kubectl apply -f -
-
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -28,16 +26,23 @@ rules:
       - nodes/metrics
     verbs:
       - "*"
-EOF
+```
+
+```
 
 
+vagrant ssh controller-0 
+
+kubectl apply -f ClusterRole.yaml
 
 ```
 
 ## 02
-```
-cat <<'EOF' | vagrant ssh "controller-0" -- kubectl apply -f -
 
+**ClusterRoleBinding.yaml**
+
+
+```
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
 metadata:
@@ -51,6 +56,15 @@ subjects:
   - apiGroup: rbac.authorization.k8s.io
     kind: User
     name: kubernetes
-EOF
+```
+
+
+
+```
+vagrant ssh controller-0
+
+kubectl apply -f ClusterRoleBinding.yaml
+
+
 ```
 
