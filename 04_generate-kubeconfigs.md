@@ -7,7 +7,7 @@
 ./scripts/generate-kubeconfig-worker
 ```
 
-
+#  generate-kubeconfig-kube-proxy
 ```
 cat ./scripts/generate-kubeconfig-kube-proxy
 ```
@@ -81,7 +81,7 @@ kubectl config use-context default --kubeconfig="../config/kube-proxy.kubeconfig
 --------
 
 
-
+#  generate-kubeconfig-worker
 
 ```
 cat ./scripts/generate-kubeconfig-worker
