@@ -78,6 +78,32 @@ kubectl config use-context default --kubeconfig="../config/kube-proxy.kubeconfig
 ```
 
 
+**换个文件夹：**
+
+
+```
+kubectl config set-cluster kubernetes-the-hard-way \
+  --certificate-authority="./certificates_inuse/ca.pem" \
+  --embed-certs=true \
+  --server=https://192.168.199.10:6443 \
+  --kubeconfig="./config/kube-proxy.kubeconfig"
+
+
+kubectl config set-credentials kube-proxy \
+  --client-certificate="./certificates_inuse/kube-proxy.pem" \
+  --client-key="./certificates_inuse/kube-proxy-key.pem" \
+  --embed-certs=true \
+  --kubeconfig="./config/kube-proxy.kubeconfig"
+
+
+
+kubectl config set-context default \
+  --cluster=kubernetes-the-hard-way \
+  --user=kube-proxy \
+  --kubeconfig="./config/kube-proxy.kubeconfig"
+```
+
+
 --------
 
 
