@@ -41,7 +41,7 @@ kubectl config use-context default --kubeconfig="${dir}/../config/kube-proxy.kub
 
 
 
-## 01 generate-kubeconfig-kube-proxy
+## generate-kubeconfig-kube-proxy
 
 
 ```
@@ -120,7 +120,7 @@ done
 
 
 
-## 02 generate-kubeconfig-worker
+## generate-kubeconfig-worker
 
 
 ```
