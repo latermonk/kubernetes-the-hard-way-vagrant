@@ -39,41 +39,6 @@ kubectl config set-context default \
 kubectl config use-context default --kubeconfig="${dir}/../config/kube-proxy.kubeconfig"
 ```
 
-```
-cat ./scripts/generate-kubeconfig-worker
-```
-
-```
-#!/bin/bash
-
-set -euo pipefail
-
-readonly dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-for instance in worker-0 worker-1 worker-2; do
-  kubectl config set-cluster kubernetes-the-hard-way \
-    --certificate-authority="${dir}/../certificates/ca.pem" \
-    --embed-certs=true \
-    --server=https://192.168.199.40:6443 \
-    --kubeconfig="${dir}/../config/${instance}.kubeconfig"
-
-  kubectl config set-credentials system:node:${instance} \
-    --client-certificate="${dir}/../certificates/${instance}.pem" \
-    --client-key="${dir}/../certificates/${instance}-key.pem" \
-    --embed-certs=true \
-    --kubeconfig="${dir}/../config/${instance}.kubeconfig"
-
-  kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
-    --user=system:node:${instance} \
-    --kubeconfig="${dir}/../config/${instance}.kubeconfig"
-
-  kubectl config use-context default --kubeconfig="${dir}/../config/${instance}.kubeconfig"
-done
-```
-
-
-
 
 
 ## 01 generate-kubeconfig-kube-proxy
@@ -111,6 +76,46 @@ kubectl config set-context default \
 
 kubectl config use-context default --kubeconfig="../config/kube-proxy.kubeconfig"
 ```
+
+
+--------
+
+
+
+
+```
+cat ./scripts/generate-kubeconfig-worker
+```
+
+```
+#!/bin/bash
+
+set -euo pipefail
+
+readonly dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+for instance in worker-0 worker-1 worker-2; do
+  kubectl config set-cluster kubernetes-the-hard-way \
+    --certificate-authority="${dir}/../certificates/ca.pem" \
+    --embed-certs=true \
+    --server=https://192.168.199.40:6443 \
+    --kubeconfig="${dir}/../config/${instance}.kubeconfig"
+
+  kubectl config set-credentials system:node:${instance} \
+    --client-certificate="${dir}/../certificates/${instance}.pem" \
+    --client-key="${dir}/../certificates/${instance}-key.pem" \
+    --embed-certs=true \
+    --kubeconfig="${dir}/../config/${instance}.kubeconfig"
+
+  kubectl config set-context default \
+    --cluster=kubernetes-the-hard-way \
+    --user=system:node:${instance} \
+    --kubeconfig="${dir}/../config/${instance}.kubeconfig"
+
+  kubectl config use-context default --kubeconfig="${dir}/../config/${instance}.kubeconfig"
+done
+```
+
 
 
 
