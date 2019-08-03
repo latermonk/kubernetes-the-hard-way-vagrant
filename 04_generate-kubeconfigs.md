@@ -124,7 +124,7 @@ done
 
 
 ```
-for instance in worker-0 worker-1 worker-2; do
+
   kubectl config set-cluster kubernetes-the-hard-way \
     --certificate-authority="../certificates/ca.pem" \
     --embed-certs=true \
@@ -142,11 +142,15 @@ for instance in worker-0 worker-1 worker-2; do
     --user=system:node:${instance} \
     --kubeconfig="../config/${instance}.kubeconfig"
 
-  kubectl config use-context default --kubeconfig="../config/${instance}.kubeconfig"
-done
 
 
 ```
 
+
+```
+  kubectl config use-context default --kubeconfig="../config/${instance}.kubeconfig"
+ 
+
+```
 
 
