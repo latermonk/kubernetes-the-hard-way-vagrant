@@ -51,13 +51,53 @@ done
 
 ```
 
+**实际动作**
+
+
+```
+
+vagrant ssh controller-0
+
+ -- sudo bash
+
+mkdir -p /var/lib/kubernetes
+
+cp \
+  /vagrant/certificates/ca.pem \
+  /vagrant/certificates/ca-key.pem \
+  /vagrant/certificates/kubernetes-key.pem \
+  /vagrant/certificates/kubernetes.pem \
+  /vagrant/config/encryption-config.yaml \
+  /var/lib/kubernetes/
+
+cp \
+  /vagrant/tools/kube-apiserver \
+  /vagrant/tools/kube-controller-manager \
+  /vagrant/tools/kube-scheduler \
+  /vagrant/tools/kubectl \
+  /usr/local/bin/
+
+cp \
+  "/vagrant/config/controller-0-kube-apiserver.service" \
+  /etc/systemd/system/kube-apiserver.service
+cp \
+  "/vagrant/config/controller-0-kube-scheduler.service" \
+  /etc/systemd/system/kube-scheduler.service
+cp \
+  "/vagrant/config/controller-0-kube-controller-manager.service" \
+  /etc/systemd/system/kube-controller-manager.service
+
+systemctl daemon-reload
+systemctl enable kube-apiserver kube-controller-manager kube-scheduler
+systemctl start kube-apiserver kube-controller-manager kube-scheduler
+```
 
 
 ## step 02:
 
 ```
 
-for c in controller-0 controller-1 controller-2; 
+for c in controller-0 controller-1 controller-2;    
 
 do vagrant ssh $c -- 
 
