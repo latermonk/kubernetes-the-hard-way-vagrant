@@ -1,5 +1,10 @@
 # Kubernetes The Hard Way (Vagrant)
 
+
+
+![k8s-arch00](_image/k8s-arch00.png)
+
+
 **froked from :**     
 
 https://github.com/kinvolk/kubernetes-the-hard-way-vagrant     
