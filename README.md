@@ -1,8 +1,14 @@
 # Kubernetes The Hard Way (Vagrant)
 
-
+##  系统架构
 
 ![k8s-arch00](_image/k8s-arch00.png)
+
+
+![Chart_02_Kubernetes-Architecture](_image/Chart_02_Kubernetes-Architecture.png)
+![Chart_03_Kubernetes-Master](_image/Chart_03_Kubernetes-Master.png)
+![Chart_04_Kubernetes-Node](_image/Chart_04_Kubernetes-Node.png)
+
 
 
 **froked from :**     
