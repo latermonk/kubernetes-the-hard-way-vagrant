@@ -274,6 +274,13 @@ experimental flags:
 **etcd在2379监听客户端的请求，在2380监听peer端的请求**
 
 
+
+![etc00-01](_image/etc00-01.png)
+![etc00-02](_image/etc00-02.png)
+
+
+
+
 ##  etcdctl
 
 
