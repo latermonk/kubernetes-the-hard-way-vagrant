@@ -278,6 +278,41 @@ experimental flags:
 ![etc00-01](_image/etc00-01.png)
 ![etc00-02](_image/etc00-02.png)
 
+##  etcd 参数解析
+
+
+
+![cmdline](_image/cmdline.png)
+
+
+```
+--name  infra01
+```
+
+```
+
+--listen-client-urls  监听客户端的端口
+
+--listen-client-urls https://192.168.199.10:2379,http://127.0.0.1:2379 
+
+```
+
+
+```
+
+--advertise-client-urls  单个节点的对外接收客户端指令的IP和端口
+
+--advertise-client-urls https://192.168.199.10:2379
+```
+
+
+```
+--initial-cluster  所有节点的对外接收客户端指令的IP和端口-列表
+
+--initial-cluster controller-0=https://192.168.199.10:2380,controller-1=https://192.168.199.11:2380,controller-2=https://192.168.199.12:2380
+
+```
+
 
 
 
