@@ -273,6 +273,18 @@ experimental flags:
 
 **etcd在2379监听客户端的请求，在2380监听peer端的请求**
 
+**检查节点健康信息**
+
+
+```
+V2:  etcdctl member list
+V3:  ETCDCTL_API=3 etcdctl member list
+
+
+
+```
+
+
 
 
 ![etc00-01](_image/etc00-01.png)
@@ -414,5 +426,13 @@ etcd监听两个端口 2379 & 2380
 https://www.cnblogs.com/breg/p/5756558.html   
 
 https://blog.csdn.net/fnatic_/article/details/84307332
+
+ETCD集群的常见问题处理（微信）
+
+
+
+
+
+
 
 
