@@ -12,7 +12,9 @@
 
 
 
+##  intro
 
+https://github.com/latermonk/etcd 
 
 
 ## 下载二进制镜像
@@ -269,6 +271,7 @@ experimental flags:
 
 ```
 
+**etcd在2379监听客户端的请求，在2380监听peer端的请求**
 
 
 ##  etcdctl
