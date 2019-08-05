@@ -139,5 +139,17 @@ GLOBAL OPTIONS:
 
 ```
 
+**status**
+
+```
+systemctl status etcd
+```
+
+---
+#  reference 
+
+https://www.cnblogs.com/breg/p/5756558.html   
+
+https://blog.csdn.net/fnatic_/article/details/84307332
 
 
