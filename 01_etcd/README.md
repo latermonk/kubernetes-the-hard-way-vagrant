@@ -286,7 +286,16 @@ experimental flags:
 
 
 ```
---name  infra01
+--name  infra0   节点名称
+```
+
+```
+--initial-advertise-peer-urls
+```
+
+```
+--listen-peer-urls 'http://localhost:2380'
+
 ```
 
 ```
@@ -297,12 +306,15 @@ experimental flags:
 
 ```
 
-
 ```
 
 --advertise-client-urls  单个节点的对外接收客户端指令的IP和端口
 
 --advertise-client-urls https://192.168.199.10:2379
+```
+
+```
+--initial-cluster-token
 ```
 
 
@@ -313,6 +325,9 @@ experimental flags:
 
 ```
 
+```
+--initial-cluster-state
+```
 
 
 
