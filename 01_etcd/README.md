@@ -9,6 +9,7 @@
 | etcd.service | /lib/systemd/system/etcd.service |
 | etcd.conf | /etc/etcd/etcd.conf |
 | *.pem | /etc/etcd/*.pem |
+|  /var/lib/etcd  |  data-storage-dir  |
 
 
 
