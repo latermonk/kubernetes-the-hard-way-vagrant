@@ -8,6 +8,7 @@
 | etcdctl | /usr/local/bin/etcdctl |
 | etcd.service | /lib/systemd/system/etcd.service |
 | etcd.conf | /etc/etcd/etcd.conf |
+| *.pem | /etc/etcd/*.pem |
 
 
 
