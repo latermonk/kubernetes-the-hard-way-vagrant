@@ -465,6 +465,34 @@ RestartSec=5
 WantedBy=multi-user.target
 
 ```
+**检查系统状态**
+
+
+```
+etcdctl cluster-health 
+
+member 8e9e05c52164694d is healthy: got healthy result from http://10.254.21.1:2379
+cluster is healthy
+
+```
+
+
+```
+etcdctl member list
+
+8e9e05c52164694d: name=controller-0 peerURLs=http://localhost:2380 clientURLs=http://10.254.21.1:2379 isLeader=true
+```
+
+
+```
+ETCDCTL_API=3 etcdctl member list
+
+8e9e05c52164694d, started, controller-0, http://localhost:2380, http://10.254.21.1:2379
+
+```
+
+
+**节点 10.254.21.1，10.254.21.2，10.254.21.3上搭建高可用etcd集群**
 
 
 
