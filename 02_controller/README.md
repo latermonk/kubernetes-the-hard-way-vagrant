@@ -1,4 +1,14 @@
+
+# 高可用
+
+
+![k8-ha](_image/k8-ha.png)
+
+
+
 #  controller
+
+
 
 **api-server**
 
