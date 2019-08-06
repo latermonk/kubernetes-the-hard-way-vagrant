@@ -437,4 +437,35 @@ https://www.cnblogs.com/netonline/p/8665847.html
 
 
 
+#   单节点etcd搭建：
+
+**节点 10.254.21.1上搭建etc服务器**
+
+```
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos
+
+[Service]
+ExecStart=/usr/local/bin/etcd \
+  --name controller-0 \
+  --data-dir=/var/lib/etcd \
+  --listen-client-urls http://10.254.21.1:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.254.21.1:2379 \
+  --listen-peer-urls http://10.254.21.1:2380 \
+  --initial-advertise-peer-urls http://10.254.21.1:2380 \
+  --initial-cluster  controller-0=https://10.254.21.1:2380 \
+  --initial-cluster-token 'etcd-cluster' \
+  --initial-cluster-state 'new'
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+
+
 
