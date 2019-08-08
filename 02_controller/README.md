@@ -6,7 +6,9 @@
 
 
 # Components:  
-https://kubernetes.io/docs/concepts/overview/components/    
+https://kubernetes.io/zh/docs/concepts/overview/components/
+
+
 
 
 #  controller
