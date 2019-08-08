@@ -9,6 +9,12 @@
 https://kubernetes.io/zh/docs/concepts/overview/components/
 
 
+[ kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
+
+[kube-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
+
+[kube-scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)
+
 
 
 #  controller
