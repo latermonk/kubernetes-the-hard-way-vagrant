@@ -125,4 +125,23 @@ RestartSec=5
 WantedBy=multi-user.target
 
 ```
+**参数解析：**
+
+
+```
+  --leader-elect=true    选主参数，在高可用的情况下，先选主在进入正式的循环
+Start a leader election client and gain leadership before executing the main loop. Enable this when running replicated components for high availability.
+
+
+
+  --master=http://127.0.0.1:8080   api-server监听的地址 
+
+
+The address of the Kubernetes API server (overrides any value in kubeconfig)
+
+
+  --v=2   log等级标识
+number for the log level verbosity
+```
+
 
