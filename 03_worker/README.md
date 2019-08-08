@@ -3,7 +3,7 @@
 **组件**    (https://kubernetes.io/zh/docs/concepts/overview/components/)    
 
 
-[kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
+[kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)     
 [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
 
 ##  kubelet
