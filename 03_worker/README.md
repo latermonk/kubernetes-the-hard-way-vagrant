@@ -1,7 +1,6 @@
 # worker-node组件   
 
-**组件**    
-[https://kubernetes.io/zh/docs/concepts/overview/components/]       (https://kubernetes.io/zh/docs/concepts/overview/components/)    
+**组件**    (https://kubernetes.io/zh/docs/concepts/overview/components/)    
 
 
 [kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
@@ -31,6 +30,32 @@ kubelet是主要的节点代理,它监测已分配给其节点的 Pod(通过 api
 | A7 | B7 | C7 |
 #  kubelet.service
 
+```
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=crio.service
+Requires=crio.service
+
+[Service]
+ExecStart=/usr/local/bin/kubelet \
+  --config=/var/lib/kubelet/kubelet-config.yaml \
+  --container-runtime=remote \
+  --container-runtime-endpoint=unix:///var/run/crio/crio.sock \
+  --image-pull-progress-deadline=2m \
+  --image-service-endpoint=unix:///var/run/crio/crio.sock \
+  --kubeconfig=/var/lib/kubelet/kubeconfig \
+  --network-plugin=cni \
+  --register-node=true \
+  --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
 
 
 
@@ -53,4 +78,25 @@ kubelet是主要的节点代理,它监测已分配给其节点的 Pod(通过 api
 
 
 # kube-proxy.service
+
+
+```
+[Unit]
+Description=Kubernetes Kube Proxy
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+
+[Service]
+ExecStart=/usr/local/bin/kube-proxy \
+  --cluster-cidr=10.200.0.0/16 \
+  --kubeconfig=/var/lib/kube-proxy/kubeconfig \
+  --proxy-mode=iptables \
+  --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
 
