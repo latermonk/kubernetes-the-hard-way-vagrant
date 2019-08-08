@@ -16,6 +16,11 @@ https://kubernetes.io/zh/docs/concepts/overview/components/
 [kube-scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)
 
 
+**VMware**
+https://blogs.vmware.com/cloudnative/2018/02/20/kubernetes-master-components/ 
+
+
+
 
 #  controller
 
