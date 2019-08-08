@@ -5,6 +5,9 @@
 ![k8-ha](_image/k8-ha.png)
 
 
+# Components:  
+https://kubernetes.io/docs/concepts/overview/components/    
+
 
 #  controller
 
