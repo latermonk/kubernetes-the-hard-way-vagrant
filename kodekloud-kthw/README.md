@@ -4,6 +4,7 @@ https://github.com/mmumshad/kubernetes-the-hard-way
 
 
 
+#  Origninal
 
 This repository holds the supporting material for the [Certified Kubernetes Administrators Course](https://kodekloud.com/p/certified-kubernetes-administrator-with-practice-tests). There are two major sections. 
 
